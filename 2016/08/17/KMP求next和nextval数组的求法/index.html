@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="本文主要介绍KMP中next数组的选择题的简单的求法  第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来" />
+  <meta name="description" content="本文主要介绍KMP中next数组的选择题的简单的求法第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。
+首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与" />
   
 
   
@@ -15,16 +16,19 @@
   
   <title>KMP求next数组和nextval数组 | ChenJianqi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要介绍KMP中next数组的选择题的简单的求法  第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1">
+  <meta name="description" content="本文主要介绍KMP中next数组的选择题的简单的求法第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。
+首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1即">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP求next数组和nextval数组">
 <meta property="og:url" content="http://yoursite.com/2016/08/17/KMP求next和nextval数组的求法/index.html">
 <meta property="og:site_name" content="ChenJianqi的博客">
-<meta property="og:description" content="本文主要介绍KMP中next数组的选择题的简单的求法  第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1">
-<meta property="og:updated_time" content="2016-08-17T12:00:55.065Z">
+<meta property="og:description" content="本文主要介绍KMP中next数组的选择题的简单的求法第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。
+首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1即">
+<meta property="og:updated_time" content="2016-08-17T13:11:42.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KMP求next数组和nextval数组">
-<meta name="twitter:description" content="本文主要介绍KMP中next数组的选择题的简单的求法  第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1">
+<meta name="twitter:description" content="本文主要介绍KMP中next数组的选择题的简单的求法第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。
+首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1即">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -79,13 +83,14 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP求next和nextval数组的求法/" data-id="ciryukbzr0000com9r6nt6h9n" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP求next和nextval数组的求法/" data-id="ciryx3rir0000pwm97gw7yqx0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h3 id="本文主要介绍KMP中next数组的选择题的简单的求法"><a href="#本文主要介绍KMP中next数组的选择题的简单的求法" class="headerlink" title="本文主要介绍KMP中next数组的选择题的简单的求法"></a>本文主要介绍KMP中next数组的选择题的简单的求法</h3><p>  第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。<br>首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加<br>上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的<br>next值对应的内容与前一位相等为止，则这个位对应的值加上1即为需求的next值；如果找到第一位<br>都没有找到与前一位相等的内容，那么需求的位上的next值即为1。<br>  next数组的求解方法是：<br>  nextval[1]=0。从第二位开始，若要求nextval[i]，将next[i]的值对应的位的值与i的值行<br>比较（例如，第i为的值为’b’，next[i]=3,则将i的值’b’与第三位的值进行比较），若相等，nextval[i]=nextval【next[i]】（例，nextval[i]=nextval[3]）；若不相等，则nextval[i]=next[i]（例，nextval[i]=next[i]=3）。</p>
+        <h3 id="本文主要介绍KMP中next数组的选择题的简单的求法"><a href="#本文主要介绍KMP中next数组的选择题的简单的求法" class="headerlink" title="本文主要介绍KMP中next数组的选择题的简单的求法"></a>本文主要介绍KMP中next数组的选择题的简单的求法</h3><pre><code>第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。
+</code></pre><p>首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加<br>上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的<br>next值对应的内容与前一位相等为止，则这个位对应的值加上1即为需求的next值；如果找到第一位<br>都没有找到与前一位相等的内容，那么需求的位上的next值即为1。<br>    next数组的求解方法是：<br>    nextval[1]=0。从第二位开始，若要求nextval[i]，将next[i]的值对应的位的值与i的值行<br>比较（例如，第i为的值为’b’，next[i]=3,则将i的值’b’与第三位的值进行比较），若相等，nextval[i]=nextval【next[i]】（例，nextval[i]=nextval[3]）；若不相等，则nextval[i]=next[i]（例，nextval[i]=next[i]=3）。</p>
 <table>
 <thead>
 <tr>
