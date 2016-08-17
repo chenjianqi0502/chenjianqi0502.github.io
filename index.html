@@ -67,13 +67,14 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP/" data-id="cirypa7uh0000aom98p19w2yh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP/" data-id="cirype07w00008om9gh6thz3f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p>#KMP算法求next数组和nextval数组的简单方法  </p>
+        <hr>
+<h2 id="title-KMP"><a href="#title-KMP" class="headerlink" title="title:KMP"></a>title:KMP</h2><p>#KMP算法求next数组和nextval数组的简单方法  </p>
 <p>###本文主要介绍KMP中next数组的选择题的简单的求法</p>
 <p>next数组的求解方法是：第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，根据前一位进行比较。首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1即为需求的next值；如果找到第一位都没有找到与前一位相等的内容，那么需求的位上的next值即为1。</p>
 <p>nextval数组的求解方法是：nextval[1]=0。从第二位开始，若要求nextval[i]，将next[i]的值对应的位的值与i的值进行比较（例如，第i为的值为’b’，next[i]=3,则将i的值’b’与第三位的值进行比较），若相等，nextval[i]=nextval【next[i]】（例，nextval[i]=nextval[3]）；若不相等，则nextval[i]=next[i]（例，nextval[i]=next[i]=3）。</p>
@@ -87,6 +88,7 @@
 <p>7.第八位的next值为2，那么将第八位和第二位进行比较，不同，则第八位的nextval值为其next值，为2。</p>
 <p>可在“aaaab”内进行验证：</p>
 <p>| 模式串  |a|a|a|a|b|<br>|next值   |0|1|2|3|4|<br>|nextval值|0|0|0|0|4|</p>
+<hr>
 
       
     </div><!-- .entry-content -->
@@ -123,7 +125,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/我的第一篇文档/" data-id="cirypa7uo0001aom9nwvdld3n" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/我的第一篇文档/" data-id="cirype08200018om9gxvwpp2d" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -166,7 +168,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/16/hello-world/" data-id="cirypa7us0002aom9puac62gp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/16/hello-world/" data-id="cirype08900028om9i5dy106n" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
