@@ -75,13 +75,15 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP求next和nextval数组的求法/" data-id="cirzoj8pj0000wwm9d4luvmyt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP求next和nextval数组的求法/" data-id="cirzoxhqo0001sgm9afeoonlr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
         <h3 id="本文主要介绍KMP中next数组的选择题的简单的求法"><a href="#本文主要介绍KMP中next数组的选择题的简单的求法" class="headerlink" title="本文主要介绍KMP中next数组的选择题的简单的求法"></a>本文主要介绍KMP中next数组的选择题的简单的求法</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;第一位的next值为0，第二位的next值为1。后面求解每一位的next值时，与前一位进行比较。首先将前一位与其next值对应的内容进行比较，如果相等，则该位的next值就是前一位的next值加上1；如果不等，向前继续寻找next值对应的内容来与前一位进行比较，直到找到某个位上内容的next值对应的内容与前一位相等为止，则这个位对应的值加上1即为需求的next值；如果找到第一位都没有找到与前一位相等的内容，那么需求的位上的next值即为1。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;next数组的求解方法是：<br><br>&nbsp;&nbsp;&nbsp;&nbsp;nextval[1]=0。从第二位开始，若要求nextval[i]，将next[i]的值对应的位的值与i的值行比较（例如，第i为的值为’b’，next[i]=3,则将i的值’b’与第三位的值进行比较），若相等，nextval[i]=nextval【next[i]】（例，nextval[i]=nextval[3]）；若不相等，则nextval[i]=next[i]（例，nextval[i]=next[i]=3）。<br></p>
+<table cellspacing="0" style="color:#FFF; text-align:left;font-size:14px;font-weight:bold; width = 400;margin-left:220px; text-align:center"><br><tr><br><td>模式串</td><br><td>a</td><td>b</td><td>a</td><td>a</td><br><td>b</td><td>c</td><td>a</td><td>c</td><br></tr><br><tr><br><td>next值</td><br><td>0</td><td>1</td><td>1</td><td>2</td><br><td>2</td><td>3</td><td>1</td><td>2</td><br></tr><br><tr><br><td>nextval</td><br><td>0</td><td>1</td><td>1</td><td>2</td><br><td>2</td><td>3</td><td>1</td><td>2</td><br></tr><br> </table>
+
 <table>
 <thead>
 <tr>
@@ -121,13 +123,7 @@
 </tr>
 </tbody>
 </table>
-<p>  1.第一位的nextval值必定为0，第二位如果与第一位相同则为0，如果不同则为1。</p>
-<p> 2.第三位的next值为1，那么将第三位和第一位进行比较，均为a，相同，则，第三位的nextval值为0。</p>
-<p>3.第四位的next值为2，那么将第四位和第二位进行比较，不同，则第四位的nextval值为其next值，为2。</p>
-<p>4.第五位的next值为2，那么将第五位和第二位进行比较，相同，第二位的next值为1，则继续将第二位与第一位进行比较，不同，则第五位的nextval值为第二位的next值，为1。</p>
-<p>5.第六位的next值为3，那么将第六位和第三位进行比较，不同，则第六位的nextval值为其next值，为3。</p>
-<p>6.第七位的next值为1，那么将第七位和第一位进行比较，相同，则第七位的nextval值为0。</p>
-<p>7.第八位的next值为2，那么将第八位和第二位进行比较，不同，则第八位的nextval值为其next值，为2。<br>可在“aaaab”内进行验证：<br></p>
+<p>  1.第一位的nextval值必定为0，第二位如果与第一位相同则为0，如果不同则为1。<br><br> 2.第三位的next值为1，那么将第三位和第一位进行比较，均为a，相同，则，第三位的nextval值为0。<br><br>3.第四位的next值为2，那么将第四位和第二位进行比较，不同，则第四位的nextval值为其next值，为2。<br><br>4.第五位的next值为2，那么将第五位和第二位进行比较，相同，第二位的next值为1，则继续将第二位与第一位进行比较，不同，则第五位的nextval值为第二位的next值，为1。<br><br>5.第六位的next值为3，那么将第六位和第三位进行比较，不同，则第六位的nextval值为其next值，为3。<br><br>6.第七位的next值为1，那么将第七位和第一位进行比较，相同，则第七位的nextval值为0。<br><br>7.第八位的next值为2，那么将第八位和第二位进行比较，不同，则第八位的nextval值为其next值，为2。<br><br>可在“aaaab”内进行验证：<br></p>
 <table>
 <thead>
 <tr>
@@ -194,7 +190,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/我的第一篇文档/" data-id="cirzoj8pu0002wwm91jq194k2" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/我的第一篇文档/" data-id="cirzoxhqt0002sgm9dumuyna4" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -237,7 +233,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/16/hello-world/" data-id="cirzoj8pp0001wwm9ek4uwybc" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/16/hello-world/" data-id="cirzoxhqi0000sgm9em4lkqkg" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
