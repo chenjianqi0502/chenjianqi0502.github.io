@@ -75,13 +75,13 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/20/观察者模式/" data-id="cis391n7f0003agm9rbfsq8u4" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/20/观察者模式/" data-id="cis3946x90003kom9x19zdwhz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><html><br>  <body> 观察者模式<br>  <h3>一、观察者模式的定义与例子</h3><br>  <p>&nbsp;&nbsp;观察者模式又称为发布/订阅模式</p><br>  <p>&nbsp;&nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。</p><br>  <p>&nbsp;&nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨的同学负责当老师来的时候通知大家。这便是一个观察者模式。</p><br>  <p>&nbsp;&nbsp;一个主题者应该具有的基本的方法：添加，删除，通知。例如放哨的同学，负责放哨的同学应该有添加通知的对象的功能，若关系不好了，可以不通知即删除通知对象的功能，还应有一个最重要的功能：通知大家老师来了！</p><br>  <p>&nbsp;&nbsp;一个观察者应该有的基本的方法：更新自己的状态。例如：玩游戏的同学，当老师来了，应该更新自己的状态–关闭窗口，继续学习。</p><br>  <p>&nbsp;&nbsp;但是这样的思路会有一个弊端：具体的观察者依赖于具体的主题者，具体的主题者依赖于具体的观察者，这样耦合性较为紧密，为双向耦合。所以为打破这种紧密的耦合性，使用抽象类，即抽象的主题者与抽象的观察者。</p><br>  <p>&nbsp;&nbsp;以同学放哨为例，将主题者抽象出来，名字为Subject，该抽象类有3个方法，Attach添加，Detach删除，Update更新。如下所示：</p><br>  <code>public abstract class Subject {
+        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><html><br>  <body> 观察者模式<br>  <h3>一、观察者模式的定义与例子</h3><br>  <p>&nbsp;&nbsp;观察者模式又称为发布/订阅模式</p><br>  <p>&nbsp;&nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。</p><br>  <p>&nbsp;&nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨的同学负责当老师来的时候通知大家。这便是一个观察者模式。</p><br>  <p>&nbsp;&nbsp;一个主题者应该具有的基本的方法：添加，删除，通知。例如放哨的同学，负责放哨的同学应该有添加通知的对象的功能，若关系不好了，可以不通知即删除通知对象的功能，还应有一个最重要的功能：通知大家老师来了！</p><br>  <p>&nbsp;&nbsp;一个观察者应该有的基本的方法：更新自己的状态。例如：玩游戏的同学，当老师来了，应该更新自己的状态–关闭窗口，继续学习。</p><br>  <p>&nbsp;&nbsp;但是这样的思路会有一个弊端：具体的观察者依赖于具体的主题者，具体的主题者依赖于具体的观察者，这样耦合性较为紧密，为双向耦合。所以为打破这种紧密的耦合性，使用抽象类，即抽象的主题者与抽象的观察者。</p><br>  <p>&nbsp;&nbsp;以同学放哨为例，将主题者抽象出来，名字为Subject，该抽象类有3个方法，Attach添加，Detach删除，Update更新。如下所示：</p><br>  &lt;<code>public abstract class Subject {
     public List&lt;Observer&gt; list = new ArrayList&lt;Observer&gt;();
     public void Attach(Observer ob){
         list.add(ob);
@@ -94,7 +94,7 @@
             o.update();
         }
     }
-}</code><br><p>&nbsp;&nbsp;具体的主题者继承这个抽象类，有一个具体的状态属性。代码如下：</p><br><code>public class ConcreteSubject extends Subject{
+}</code>&gt;<br><p>&nbsp;&nbsp;具体的主题者继承这个抽象类，有一个具体的状态属性。代码如下：</p><br><code>public class ConcreteSubject extends Subject{
     private String concrete = null;
     public String getConcrete() {
         return concrete;
@@ -178,7 +178,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP求next和nextval数组的求法/" data-id="cis391n700000agm9fce9tc38" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/KMP求next和nextval数组的求法/" data-id="cis3946x20001kom94mqenrfc" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -291,7 +291,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/我的第一篇文档/" data-id="cis391n770001agm9ert6n518" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/17/我的第一篇文档/" data-id="cis3946x60002kom9q5weoh8b" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -334,7 +334,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/16/hello-world/" data-id="cis391n7a0002agm93iuhrqrs" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/16/hello-world/" data-id="cis3946ww0000kom97i41kl69" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
