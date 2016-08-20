@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/20/观察者模式/index.html">
 <meta property="og:site_name" content="ChenJianqi的博客">
 <meta property="og:description" content="观察者模式   观察者模式  一、观察者模式的定义与例子  &amp;nbsp;&amp;nbsp;观察者模式又称为发布/订阅模式  &amp;nbsp;&amp;nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。  &amp;nbsp;&amp;nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨">
-<meta property="og:updated_time" content="2016-08-20T13:59:21.886Z">
+<meta property="og:updated_time" content="2016-08-20T14:00:39.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="观察者模式">
 <meta name="twitter:description" content="观察者模式   观察者模式  一、观察者模式的定义与例子  &amp;nbsp;&amp;nbsp;观察者模式又称为发布/订阅模式  &amp;nbsp;&amp;nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。  &amp;nbsp;&amp;nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨">
@@ -79,26 +79,13 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/20/观察者模式/" data-id="cis3946x90003kom9x19zdwhz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/20/观察者模式/" data-id="cis3960m300039wm9gpwruw6f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><html><br>  <body> 观察者模式<br>  <h3>一、观察者模式的定义与例子</h3><br>  <p>&nbsp;&nbsp;观察者模式又称为发布/订阅模式</p><br>  <p>&nbsp;&nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。</p><br>  <p>&nbsp;&nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨的同学负责当老师来的时候通知大家。这便是一个观察者模式。</p><br>  <p>&nbsp;&nbsp;一个主题者应该具有的基本的方法：添加，删除，通知。例如放哨的同学，负责放哨的同学应该有添加通知的对象的功能，若关系不好了，可以不通知即删除通知对象的功能，还应有一个最重要的功能：通知大家老师来了！</p><br>  <p>&nbsp;&nbsp;一个观察者应该有的基本的方法：更新自己的状态。例如：玩游戏的同学，当老师来了，应该更新自己的状态–关闭窗口，继续学习。</p><br>  <p>&nbsp;&nbsp;但是这样的思路会有一个弊端：具体的观察者依赖于具体的主题者，具体的主题者依赖于具体的观察者，这样耦合性较为紧密，为双向耦合。所以为打破这种紧密的耦合性，使用抽象类，即抽象的主题者与抽象的观察者。</p><br>  <p>&nbsp;&nbsp;以同学放哨为例，将主题者抽象出来，名字为Subject，该抽象类有3个方法，Attach添加，Detach删除，Update更新。如下所示：</p><br>  &lt;<code>public abstract class Subject {
-    public List&lt;Observer&gt; list = new ArrayList&lt;Observer&gt;();
-    public void Attach(Observer ob){
-        list.add(ob);
-    }
-    public void Dettach(Observer ob){
-        list.remove(ob);
-    }
-    public void NotifyOb(){
-        for(Observer o:list){
-            o.update();
-        }
-    }
-}</code>&gt;<br><p>&nbsp;&nbsp;具体的主题者继承这个抽象类，有一个具体的状态属性。代码如下：</p><br><code>public class ConcreteSubject extends Subject{
+        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><html><br>  <body> 观察者模式<br>  <h3>一、观察者模式的定义与例子</h3><br>  <p>&nbsp;&nbsp;观察者模式又称为发布/订阅模式</p><br>  <p>&nbsp;&nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。</p><br>  <p>&nbsp;&nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨的同学负责当老师来的时候通知大家。这便是一个观察者模式。</p><br>  <p>&nbsp;&nbsp;一个主题者应该具有的基本的方法：添加，删除，通知。例如放哨的同学，负责放哨的同学应该有添加通知的对象的功能，若关系不好了，可以不通知即删除通知对象的功能，还应有一个最重要的功能：通知大家老师来了！</p><br>  <p>&nbsp;&nbsp;一个观察者应该有的基本的方法：更新自己的状态。例如：玩游戏的同学，当老师来了，应该更新自己的状态–关闭窗口，继续学习。</p><br>  <p>&nbsp;&nbsp;但是这样的思路会有一个弊端：具体的观察者依赖于具体的主题者，具体的主题者依赖于具体的观察者，这样耦合性较为紧密，为双向耦合。所以为打破这种紧密的耦合性，使用抽象类，即抽象的主题者与抽象的观察者。</p><br>  <p>&nbsp;&nbsp;以同学放哨为例，将主题者抽象出来，名字为Subject，该抽象类有3个方法，Attach添加，Detach删除，Update更新。如下所示：</p><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  public abstract class Subject &#123;</div><div class="line">	public List&lt;Observer&gt; list = new ArrayList&lt;Observer&gt;();</div><div class="line">	public void Attach(Observer ob)&#123;</div><div class="line">		list.add(ob);</div><div class="line">	&#125;</div><div class="line">	public void Dettach(Observer ob)&#123;</div><div class="line">		list.remove(ob);</div><div class="line">	&#125;</div><div class="line">	public void NotifyOb()&#123;</div><div class="line">		for(Observer o:list)&#123;</div><div class="line">			o.update();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br><p>&nbsp;&nbsp;具体的主题者继承这个抽象类，有一个具体的状态属性。代码如下：</p><br><code>public class ConcreteSubject extends Subject{
     private String concrete = null;
     public String getConcrete() {
         return concrete;
