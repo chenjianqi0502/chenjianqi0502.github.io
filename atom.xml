@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-22T12:01:02.732Z</updated>
+  <updated>2016-08-23T23:54:42.908Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,14 +20,27 @@
     <link href="http://yoursite.com/2016/08/20/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2016/08/20/观察者模式/</id>
     <published>2016-08-19T16:00:00.000Z</published>
-    <updated>2016-08-22T12:01:02.732Z</updated>
+    <updated>2016-08-23T23:54:42.908Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><html><br>  <body> 观察者模式<br>  <h3>一、观察者模式的定义与例子</h3><br>  &nbsp;&nbsp;观察者模式又称为发布/订阅模式<br>  <p>&nbsp;&nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。</p><br>  <p>&nbsp;&nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨的同学负责当老师来的时候通知大家。这便是一个观察者模式。</p><br>  <p>&nbsp;&nbsp;一个主题者应该具有的基本的方法：添加，删除，通知。例如放哨的同学，负责放哨的同学应该有添加通知的对象的功能，若关系不好了，可以不通知即删除通知对象的功能，还应有一个最重要的功能：通知大家老师来了！</p><br>  <p>&nbsp;&nbsp;一个观察者应该有的基本的方法：更新自己的状态。例如：玩游戏的同学，当老师来了，应该更新自己的状态–关闭窗口，继续学习。</p><br>  <p>&nbsp;&nbsp;但是这样的思路会有一个弊端：具体的观察者依赖于具体的主题者，具体的主题者依赖于具体的观察者，这样耦合性较为紧密，为双向耦合。所以为打破这种紧密的耦合性，使用抽象类，即抽象的主题者与抽象的观察者。</p><br>  <p>&nbsp;&nbsp;以同学放哨为例，将主题者抽象出来，名字为Subject，该抽象类有3个方法，Attach添加，Detach删除，Update更新。如下所示：</p><br><br>    public abstract class Subject {<br>      public List<observer> list = new ArrayList<observer>();<br>         public void Attach(Observer ob){<br>        list.add(ob);<br>        }<br>        public void Dettach(Observer ob){<br>          list.remove(ob);<br>    }<br>    public void NotifyOb(){<br>           for(Observer o:list){<br>                o.update();<br>            }<br>        }<br>    }<br>  　　　　<br><br><p>&nbsp;&nbsp;具体的主题者继承这个抽象类，有一个具体的状态属性。代码如下：</p><br>     public class ConcreteSubject extends Subject{<br>    private String concrete = null;<br>    public String getConcrete() {<br>        return concrete;<br>    }<br>    public void setConcrete(String concrete) {<br>        this.concrete = concrete;<br>    }<br>}<br><p>&nbsp;&nbsp;有一个抽象的观察者，具有的方法是更新，代码如下：</p><br>     public abstract class Observer {<br>    public abstract void update();<br>}<br><p>&nbsp;&nbsp;具体的观察者继承抽象的观察者。拥有自己的名字，状态属性。代码如下：</p><br>     public class ConcreteObserver extends Observer{<br><br>    private String name = null;<br>    private String statusString = null;<br>    private ConcreteSubject sub = null;<br>    public ConcreteObserver(ConcreteSubject sub,String name){<br>        this.name = name;<br>        this.sub = sub;<br>    }<br>    public String getName() {<br>        return name;<br>    }<br>    public void setName(String name) {<br>        this.name = name;<br>    }<br>    public String getStatusString() {<br>        return statusString;<br>    }<br>    public void setStatusString(String statusString) {<br>        this.statusString = statusString;<br>    }<br>    public ConcreteSubject getSub() {<br>        return sub;<br>    }<br>    public void setSub(ConcreteSubject sub) {<br>        this.sub = sub;<br>    }<br>    @Override<br>    public void update() {<br>        // TODO Auto-generated method stub<br>        statusString = sub.getConcrete();//接收老师的状态<br>        System.out.println(“关闭NBA窗口，继续学习”);<br>    }<br>}<br><p>&nbsp;&nbsp;客户端怎么调用呢？首先要创建一个主题者（放哨的同学）,将玩游戏的几个要好的同学加入到通知的集合中。等待老师的出现，老师一来，则去调用Update方法来一一通知大家。代码如下：</p><br>     ConcreteSubject subject = new ConcreteSubject();<br>        subject.setConcrete(“来了”);<br>        ConcreteObserver ob = new ConcreteObserver(subject, “x”);<br>        subject.Attach(ob);<br>        subject.NotifyOb();<br>  <h3>二、观察者模式的特点</h3><br>  <p>&nbsp;&nbsp;观察者模式所做的工作就是在解耦合，让耦合的双方都依赖于抽象而不是依赖于具体。从而使各自变化不会引起另一边的变化。</p><br>  <h3>三、观察者模式的缺点</h3><br>  <p>观察者模式当没有了观察者这样的接口的时候（不相关的类拥有不同的方法名字），通知的功能就不起作用了。因此就引出了事件委托。事件委托是一种引勇方法的类型。一旦委托分配了方法就有与该方法相同的行为。委托方法的使用可以像其他的方法一样，具有参数值和返回值。（不再详述）</p><br>  </observer></observer></body><br></html>
+    <content type="html"><![CDATA[<h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1>  <body> 观察者模式<br>  <h3>一、观察者模式的定义与例子</h3><br> 　　　　观察者模式又称为发布/订阅模式。<br>  &nbsp;&nbsp;观察者模式是一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者，使它们更新自己。<br>  &nbsp;&nbsp;例如：一个放哨的同学是一个主题对象，或者一个老师是一个主题对象。其他玩耍的同学是观察者。放哨的同学负责当老师来的时候通知大家。这便是一个观察者模式。<p></p><br>  <p>&nbsp;&nbsp;一个主题者应该具有的基本的方法：添加，删除，通知。例如放哨的同学，负责放哨的同学应该有添加通知的对象的功能，若关系不好了，可以不通知即删除通知对象的功能，还应有一个最重要的功能：通知大家老师来了！</p><br>  <p>&nbsp;&nbsp;一个观察者应该有的基本的方法：更新自己的状态。例如：玩游戏的同学，当老师来了，应该更新自己的状态–关闭窗口，继续学习。</p><br>  <p>&nbsp;&nbsp;但是这样的思路会有一个弊端：具体的观察者依赖于具体的主题者，具体的主题者依赖于具体的观察者，这样耦合性较为紧密，为双向耦合。所以为打破这种紧密的耦合性，使用抽象类，即抽象的主题者与抽象的观察者。</p><br>  <p>&nbsp;&nbsp;以同学放哨为例，将主题者抽象出来，名字为Subject，该抽象类有3个方法，Attach添加，Detach删除，Update更新。如下所示：</p><br><code>public abstract class Subject {
+      &amp;nbsp;public List&lt;Observer&gt; list = new ArrayList&lt;Observer&gt;();
+    &amp;nbsp;public void Attach(Observer ob){
+        &amp;nbsp;&amp;nbsp;list.add(ob);
+      &amp;nbsp;}
+      &amp;nbsp;public void Dettach(Observer ob){
+        &amp;nbsp;&amp;nbsp;list.remove(ob);
+      &amp;nbsp;}
+    public void NotifyOb(){
+　　　　for(Observer o:list){
+　　　　o.update();
+          }
+        }
+    }</code>  　　　　<br><br><p>&nbsp;&nbsp;具体的主题者继承这个抽象类，有一个具体的状态属性。代码如下：</p><br>     public class ConcreteSubject extends Subject{<br>    private String concrete = null;<br>    public String getConcrete() {<br>        return concrete;<br>    }<br>    public void setConcrete(String concrete) {<br>        this.concrete = concrete;<br>    }<br>}<br><p>&nbsp;&nbsp;有一个抽象的观察者，具有的方法是更新，代码如下：</p><br>     public abstract class Observer {<br>    public abstract void update();<br>}<br><p>&nbsp;&nbsp;具体的观察者继承抽象的观察者。拥有自己的名字，状态属性。代码如下：</p><br>     public class ConcreteObserver extends Observer{<br><br>    private String name = null;<br>    private String statusString = null;<br>    private ConcreteSubject sub = null;<br>    public ConcreteObserver(ConcreteSubject sub,String name){<br>        this.name = name;<br>        this.sub = sub;<br>    }<br>    public String getName() {<br>        return name;<br>    }<br>    public void setName(String name) {<br>        this.name = name;<br>    }<br>    public String getStatusString() {<br>        return statusString;<br>    }<br>    public void setStatusString(String statusString) {<br>        this.statusString = statusString;<br>    }<br>    public ConcreteSubject getSub() {<br>        return sub;<br>    }<br>    public void setSub(ConcreteSubject sub) {<br>        this.sub = sub;<br>    }<br>    @Override<br>    public void update() {<br>        // TODO Auto-generated method stub<br>        statusString = sub.getConcrete();//接收老师的状态<br>        System.out.println(“关闭NBA窗口，继续学习”);<br>    }<br>}<br><p>&nbsp;&nbsp;客户端怎么调用呢？首先要创建一个主题者（放哨的同学）,将玩游戏的几个要好的同学加入到通知的集合中。等待老师的出现，老师一来，则去调用Update方法来一一通知大家。代码如下：</p><br>     ConcreteSubject subject = new ConcreteSubject();<br>        subject.setConcrete(“来了”);<br>        ConcreteObserver ob = new ConcreteObserver(subject, “x”);<br>        subject.Attach(ob);<br>        subject.NotifyOb();<br>  <h3>二、观察者模式的特点</h3><br>  <p>&nbsp;&nbsp;观察者模式所做的工作就是在解耦合，让耦合的双方都依赖于抽象而不是依赖于具体。从而使各自变化不会引起另一边的变化。</p><br>  <h3>三、观察者模式的缺点</h3><br>  <p>观察者模式当没有了观察者这样的接口的时候（不相关的类拥有不同的方法名字），通知的功能就不起作用了。因此就引出了事件委托。事件委托是一种引勇方法的类型。一旦委托分配了方法就有与该方法相同的行为。委托方法的使用可以像其他的方法一样，具有参数值和返回值。（不再详述）</p><br>  </body>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;观察者模式&quot;&gt;&lt;a href=&quot;#观察者模式&quot; class=&quot;headerlink&quot; title=&quot;观察者模式&quot;&gt;&lt;/a&gt;观察者模式&lt;/h1&gt;&lt;html&gt;&lt;br&gt;  &lt;body&gt; 观察者模式&lt;br&gt;  &lt;h3&gt;一、观察者模式的定义与例子&lt;/h3&gt;&lt;br&gt;  &amp;nb
+      &lt;h1 id=&quot;观察者模式&quot;&gt;&lt;a href=&quot;#观察者模式&quot; class=&quot;headerlink&quot; title=&quot;观察者模式&quot;&gt;&lt;/a&gt;观察者模式&lt;/h1&gt;  &lt;body&gt; 观察者模式&lt;br&gt;  &lt;h3&gt;一、观察者模式的定义与例子&lt;/h3&gt;&lt;br&gt; 　　　　观察者模式又称为发布
     
     </summary>
     
