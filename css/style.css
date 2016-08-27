@@ -566,8 +566,10 @@ html {
 	font-size: 87.5%;
 }
 body {
+	/*font-size: 14px;
+	font-size: 0.9rem;*/
 	font-size: 14px;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-family: Microsoft YaHei,  Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
 	color: rgb(0, 0, 0); /*Article & Widget Content*/
@@ -741,7 +743,7 @@ section[role="banner"] {
 .widget-area .widget p,
 .widget-area .widget li,
 .widget-area .widget .textwidget {
-	font-size: 13px;
+	font-size: 16px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
 }
@@ -1005,7 +1007,7 @@ article.sticky .featured-post {
     font-family: Consolas, Monaco, Lucida Console, monospace;
     padding: 0 5px;
     margin: 0 2px;
-    font-size: 0.9em;
+    font-size: 1.2em;
     border: 1px solid rgba(0, 0, 0, 0.24);
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -1151,7 +1153,7 @@ figure.highlight {
     line-height: 1.6;
     overflow: auto;
     position: relative;
-    font-size: 0.9em;
+    font-size: 1.6em;
 }
 
 figure.highlight table {
@@ -1260,7 +1262,7 @@ article.format-aside .aside {
 	border-left: 22px solid #a8bfe8;
 }
 article.format-aside p {
-	font-size: 13px;
+	font-size: 16px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
 	color: #4a5466;
