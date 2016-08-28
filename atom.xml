@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-28T08:33:13.355Z</updated>
+  <updated>2016-08-28T08:38:51.769Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://yoursite.com/2016/08/27/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2016/08/27/享元模式/</id>
     <published>2016-08-27T02:55:30.922Z</published>
-    <updated>2016-08-28T08:33:13.355Z</updated>
+    <updated>2016-08-28T08:38:51.769Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h1><p> 　　享元模式（Flyweight）运用共享技术有效的支持大量的细粒度的对象。<br>　　用一个例子来说明：一个网站有些用户需要用博客的方式展示，有些用户需要用论坛的方式展示，有些用户需要用图片的方式展示，但是这么多展示方式，实现起来确实有些难度，毕竟展示方式确实不同。若这些网站的数据库是共享的，那么我们考虑使用享元模式来实现，也就是多个用户都想使用博客的方式来展示，那么只需要创建一个博客实例即可。这不仅减轻了服务器的负担，而且减轻了程序员编程的负担。那么这么多不同的方式展示，也就是不同的实例不同，那么可以使用一个工厂来记录是否已经有相同的实例，若相同则直接取出来，否则的话将新创建一个实例，并加入到工厂中。<br>画个图表示一下：<br><img src="http://i2.buimg.com/4851/ed632c3da1fce934.png" alt="image"></p>
+    <content type="html"><![CDATA[<h1 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h1><p> 　　享元模式（Flyweight）运用共享技术有效的支持大量的细粒度的对象。<br>　　用一个例子来说明：一个网站有些用户需要用博客的方式展示，有些用户需要用论坛的方式展示，有些用户需要用图片的方式展示，但是这么多展示方式，实现起来确实有些难度，毕竟展示方式确实不同。若这些网站的数据库是共享的，那么我们考虑使用享元模式来实现，也就是多个用户都想使用博客的方式来展示，那么只需要创建一个博客实例即可。这不仅减轻了服务器的负担，而且减轻了程序员编程的负担。那么这么多不同的方式展示，也就是不同的实例不同，那么可以使用一个工厂来记录是否已经有相同的实例，若相同则直接取出来，否则的话将新创建一个实例，并加入到工厂中。<br>画个图表示一下：<br>/<em><img src="http://i2.buimg.com/4851/ed632c3da1fce934.png" alt="image"></em>/</p>
  <div align="center"><br>  <img src="http://i2.buimg.com/4851/ed632c3da1fce934.png"><br>  </div>
 
 
