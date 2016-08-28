@@ -93,7 +93,8 @@ Microsoft YaHei,html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h
 	vertical-align: baseline; 
 }
 body {
-	line-height: 1;
+	/*line-height: 1;*/
+	line-height: 20px;
 }
 ol,
 ul {
@@ -1147,7 +1148,7 @@ footer.entry-meta {
 /* Hexo Code */
 figure.highlight {
     font-size: 14px;
-    font-size: 2.0rem;
+    font-size: 0.9rem;
     border: 1px solid rgba(0, 0, 0, 0.24);
     margin-bottom: 15px;
     padding: 7px 15px;
