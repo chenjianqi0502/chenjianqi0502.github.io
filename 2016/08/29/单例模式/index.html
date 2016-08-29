@@ -15,16 +15,16 @@
   
   <title>单例模式 | ChenJianqi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance(">
+  <meta name="description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance()&amp;#123;　　　　　if(ins">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="http://yoursite.com/2016/08/29/单例模式/index.html">
 <meta property="og:site_name" content="ChenJianqi的博客">
-<meta property="og:description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance(">
-<meta property="og:updated_time" content="2016-08-29T13:10:21.713Z">
+<meta property="og:description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance()&amp;#123;　　　　　if(ins">
+<meta property="og:updated_time" content="2016-08-29T13:30:15.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance(">
+<meta name="twitter:description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance()&amp;#123;　　　　　if(ins">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -79,13 +79,13 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/29/单例模式/" data-id="cisg2xz770001ksm93u5bww43" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/29/单例模式/" data-id="cisg31hsg000318m9ik7o9qjn" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p>　　　　　　　　　　　　　　　　　　单例模式<br>　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">　class Singleton&#123;</div><div class="line">  　　private static Singleton instance = null;</div><div class="line">　　　public static Singleton getInstance()&#123;</div><div class="line">　　　　　if(instance == null)&#123;</div><div class="line">　　　　　　　instance = new Singleton();</div><div class="line">　　　　　&#125;  </div><div class="line">　　　　　return instance;</div><div class="line">　　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p>　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">　class Singleton&#123;</div><div class="line">  　　private static Singleton instance = null;</div><div class="line">　　　public static Singleton getInstance()&#123;</div><div class="line">　　　　　if(instance == null)&#123;</div><div class="line">　　　　　　　instance = new Singleton();</div><div class="line">　　　　　&#125;  </div><div class="line">　　　　　return instance;</div><div class="line">　　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>　　客户端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　　Singleton s1 = new Singleton();</div><div class="line">　　Singleton s2 = new Singleton();</div><div class="line">　　if(s1 == s2)&#123;</div><div class="line">　　　　System.out.println(&quot;是同一个实例&quot;);</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
 <p>　　但是当进程处于多线程时候，可能上述代码还是出现问题，也就是会出现多个实例。因此考虑使用加锁方式来处理。加锁是确保当一个线程处于代码的临界区时，另一个线程不进入临界区。如果其他线程试图进入锁定代码时，则它将一直等待，直到该对象被释放。因此把上述代码中的getInstance()加锁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　public static Singleton getInstance()&#123;</div><div class="line">　　　　synchronized(this)&#123;</div><div class="line">　　　　　if(instance == null)&#123;</div><div class="line">    　　　　instance = new Singleton();</div><div class="line">  　　　　&#125;</div><div class="line">&#125;　　　　</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
 <p>　　　但是上述代码中，都不知道有没有实例就加锁了，这样会影响性能。因此对这部分代码继续改良，于是出现了双重锁定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">　　public static Singleton getInstance()&#123;</div><div class="line">　　　　if(instance == null)&#123;</div><div class="line">　　　　　　synchronized(this)&#123;</div><div class="line">　　　　　　　if(instance == null)&#123;</div><div class="line">    　　　　　　instance = new Singleton();</div><div class="line">  　　　　　　&#125;</div><div class="line">       　　&#125;　</div><div class="line">     　&#125;　　　</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
@@ -110,8 +110,10 @@
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
+        <span class="nav-previous"><a href="/2016/08/29/享元模式/" rel="prev"><span class="meta-nav">←</span> 享元模式</a></span>
     
-        <span class="nav-next"><a href="/2016/08/29/享元模式/" rel="next">享元模式 <span class="meta-nav">→</span></a></span>
+    
+        <span class="nav-next"><a href="/2016/08/20/观察者模式/" rel="next">观察者模式 <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 
@@ -142,11 +144,11 @@
       <ul>
         
           <li>
-            <a href="/2016/08/29/单例模式/">单例模式</a>
+            <a href="/2016/08/29/享元模式/">享元模式</a>
           </li>
         
           <li>
-            <a href="/2016/08/29/享元模式/">享元模式</a>
+            <a href="/2016/08/29/单例模式/">单例模式</a>
           </li>
         
           <li>
