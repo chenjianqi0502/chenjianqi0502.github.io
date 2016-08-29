@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　publ" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>单例模式 | ChenJianqi的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单例模式">
+<meta property="og:url" content="http://yoursite.com/2016/08/29/单例模式/index.html">
+<meta property="og:site_name" content="ChenJianqi的博客">
+<meta property="og:description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance(">
+<meta property="og:updated_time" content="2016-08-29T13:10:21.713Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="单例模式">
+<meta name="twitter:description" content="单例模式　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：代码如下：123456789　class Singleton&amp;#123;  　　private static Singleton instance = null;　　　public static Singleton getInstance(">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="ChenJianqi的博客" rel="home">ChenJianqi的博客</a>
+      </h1>
+      
+        <script type="text/javascript" src="http://api.hitokoto.us/rand?encode=js&charset=utf-8"></script>
+        <h2 class="site-description"><script>hitokoto();</script></h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-单例模式" class="post-单例模式 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      单例模式
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/08/29/单例模式/" data-id="cisg2cuac0002u8m9n2giayn1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>　　　　　　　　　　　　　　　　　　单例模式<br>　　单例模式（Singleton）是保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式的结构图如下所示：<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">　class Singleton&#123;</div><div class="line">  　　private static Singleton instance = null;</div><div class="line">　　　public static Singleton getInstance()&#123;</div><div class="line">　　　　　if(instance == null)&#123;</div><div class="line">　　　　　　　instance = new Singleton();</div><div class="line">　　　　　&#125;  </div><div class="line">　　　　　return instance;</div><div class="line">　　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>　　客户端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　　Singleton s1 = new Singleton();</div><div class="line">　　Singleton s2 = new Singleton();</div><div class="line">　　if(s1 == s2)&#123;</div><div class="line">　　　　System.out.println(&quot;是同一个实例&quot;);</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
+<p>　　但是当进程处于多线程时候，可能上述代码还是出现问题，也就是会出现多个实例。因此考虑使用加锁方式来处理。加锁是确保当一个线程处于代码的临界区时，另一个线程不进入临界区。如果其他线程试图进入锁定代码时，则它将一直等待，直到该对象被释放。因此把上述代码中的getInstance()加锁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　public static Singleton getInstance()&#123;</div><div class="line">　　　　synchronized(this)&#123;</div><div class="line">　　　　　if(instance == null)&#123;</div><div class="line">    　　　　instance = new Singleton();</div><div class="line">  　　　　&#125;</div><div class="line">&#125;　　　　</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
+<p>　　　但是上述代码中，都不知道有没有实例就加锁了，这样会影响性能。因此对这部分代码继续改良，于是出现了双重锁定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">　　public static Singleton getInstance()&#123;</div><div class="line">　　　　if(instance == null)&#123;</div><div class="line">　　　　　　synchronized(this)&#123;</div><div class="line">　　　　　　　if(instance == null)&#123;</div><div class="line">    　　　　　　instance = new Singleton();</div><div class="line">  　　　　　　&#125;</div><div class="line">       　　&#125;　</div><div class="line">     　&#125;　　　</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
+<p>　  为什么用双重加锁，可以考虑，当一个线程已经进入到加锁位置，但还没有创建实例，这时又有一个线程到来，判断实例未创建，因此进入到加锁之前的代码，由于已经有一个线程已经进入并加锁，所以后来的线程被阻塞，进行排队等待直到锁被释放为止。当第一个线程释放了锁时，另一个线程会执行加锁，执行加锁后的代码。如果没有第二个ｉｆ语句那么，后来的线程会继续创建一个实例，因此这违背了初衷，所以必须加上第二个ｉｆ语句。这样就达到了只有一个实例的目的。<br>　　静态初始化的方式是自己在被加载时就将自己实例化，所以被形象的称为饿汉模式。第一次被引用时才会将自己实例化，所以就被称为懒汉模式。饿汉模式由于在类加载时就实例化对象，因此要提前占用系统资源。而懒汉模式面临着多线程访问的安全性问题，因此需要做双重锁定的处理才能保证安全。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/08/29/单例模式/">
+    <time datetime="2016-08-28T16:00:00.000Z" class="entry-date">
+        2016-08-29
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2016/08/29/享元模式/" rel="prev"><span class="meta-nav">←</span> 享元模式</a></span>
+    
+    
+        <span class="nav-next"><a href="/2016/08/20/观察者模式/" rel="next">观察者模式 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/29/享元模式/">享元模式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/单例模式/">单例模式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/20/观察者模式/">观察者模式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/KMP求next和nextval数组的求法/">KMP求next数组和nextval数组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/17/我的第一篇文档/">我的第一篇文档</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 ChenJianqi
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
